@@ -61,3 +61,18 @@ def load_itkimage_lungmask(_id, lungmask_path):
 
 def get_iw_dir_name():
     return os.path.dirname(__file__)
+
+
+def get_ids(data_path, subset_ids):
+    """Gets ids from the given files' names"""
+    ids = []
+    for subset_id in subset_ids:
+        ids_dp = os.listdir(jp(data_path, f'subset{subset_id}'))
+        [(ids.append(id_dp.strip('.mhd')) if id_dp.endswith('mhd') else None) for id_dp in ids_dp]
+
+    return ids
+
+
+def itkimage2image(itkimage):
+    """Moves z-axis to the last position."""
+    return np.swapaxes(sitk.GetArrayFromImage(itkimage), 0, 2)
