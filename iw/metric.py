@@ -131,8 +131,8 @@ def get_size_df(df, size='small'):
         return size_df
 
 
-def get_prc_met(df, thresholds=None, dice_th=0, hit_stat='hit_stat', self_stat='self_stat'):
-    """Collects necessary data for building prc for mets experiments"""
+def get_prc(df, thresholds=None, dice_th=0, hit_stat='hit_stat', self_stat='self_stat'):
+    """Collects necessary data for building prc for experiments"""
     if thresholds is None:
         thresholds = np_sigmoid(np.linspace(0, 5, num=51))
 
