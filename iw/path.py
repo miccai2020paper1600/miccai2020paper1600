@@ -3,6 +3,3 @@ luna_data_path = '/enter/your/path/to/luna/data'
 
 lits_raw_path = '/enter/your/path/to/lits/raw/data'
 lits_data_path = '/enter/your/path/to/lits/data'
-
-luna_exps_path = '/enter/your/path/to/luna/exp/stack'
-lits_exps_path = '/enter/your/path/to/lits/exp/stack'
