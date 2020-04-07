@@ -94,3 +94,11 @@ def nodules2centers(nodules, z_origin, z_spacing):
         centers.append(np.mean(nodule_indexes, axis=0))
 
     return np.round(centers)
+
+
+def get_nodules(_id, xml_dp):
+    """Gets given expert delineation."""
+    root = id2root(xml_dp, _id)
+    expert_roots = root2expert_roots(root)
+    expert_nodules = [expert_root2nodules(expert_root) for expert_root in expert_roots]
+    return expert_nodules

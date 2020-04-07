@@ -20,10 +20,14 @@ Anonymous code release for paper id 1600
 ## Requirements
 - [Python](https://www.python.org) (v3.6 or later)
 - [Deep pipe](https://github.com/neuro-ml/deep_pipe) (commit: [4383211ea312c098d710fbeacc05151e10a27e80](https://github.com/neuro-ml/deep_pipe/tree/4383211ea312c098d710fbeacc05151e10a27e80))
+- [imageio](https://pypi.org/project/imageio/) (v 2.8.0)
 - [NiBabel](https://pypi.org/project/nibabel/) (v3.0.2)
 - [NumPy](http://numpy.org/) (v1.17.0 or later)
 - [OpenCV python](https://pypi.org/project/opencv-python/) (v4.2.0.32)
 - [Pandas](https://pandas.pydata.org/) (v1.0.1 or later)
+- [pdp](https://pypi.org/project/pdp/) (v 0.3.0)
+- [pydicom](https://pypi.org/project/pydicom/) (v 1.4.2)
+- [resource-manager](https://pypi.org/project/resource-manager/) (v 0.11.1)
 - [SciPy library](https://www.scipy.org/scipylib/index.html) (v0.19.0 or later)
 - [scikit-image](https://scikit-image.org) (v0.15.0 or later)
 - [Simple ITK](http://www.simpleitk.org/) (v1.2.4)
@@ -81,4 +85,25 @@ configs in `config/exp_holdout`. To successfully process data and build-run
 experiemnts one need to change core paths `iw/path.py`.  
 
 ## Experiment Reproduction
-[TODO] Step-by-step guide to run an experiment..
+To run a single experiment please follow the steps below:
+
+First, the experiment structure must be created:
+```
+python -m dpipe build_experiment --config_path "$1" --experiment_path "$2"
+```
+
+where the first argument is a path to the `.config` file e.g., 
+`"~/miccai2020paper1600/config/exp_holdout/luna/iwdl.config"`
+and the second argument is a path to the folder where the experiment
+structure will be organized, e.g.
+`"~/miccai2020paper1600/froc_data/luna/iwdl"`.
+
+Then, to run an experiment please go to the experiment folder inside the created structure:
+```
+cd ~/miccai2020paper1600/froc_data/luna/iwdl
+```
+and call the following command to start the experiment:
+```
+python -m dpipe run_experiment --config_path "../resources.config"
+```
+where `resources.config` is the general `.config` file of the experiment.
