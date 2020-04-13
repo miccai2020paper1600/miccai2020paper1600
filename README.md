@@ -38,11 +38,13 @@ Anonymous code release for paper id 1600
 ```
 ├── config
 │   ├── assets
-│   └── exp_holdout
-│       ├── lits
-│       │   └── *.config
-│       └── luna
-│           └── *.config
+│   ├── exp_holdout
+│   │   ├── lits
+│   │   │   └── *.config
+│   │   └── luna
+│   │       └── *.config
+│   └── exp_val
+│       └── *.config
 ├── iw
 │   ├── dataset
 │   │   ├── lits.py
@@ -82,7 +84,11 @@ in `iw/torch.py`.
 
 All final experiments (for publicly available data) could be built via
 configs in `config/exp_holdout`. To successfully process data and build-run
-experiemnts one need to change core paths `iw/path.py`.  
+experiments one need to change core paths `iw/path.py`.
+
+Validation experiments could be built via configs in `config/exp_val`. It
+includes hyperparameters search for the Focal Loss. ([TODO] Vis. notebook &
+froc data for val exp)
 
 ## Experiment Reproduction
 To run a single experiment please follow the steps below:
