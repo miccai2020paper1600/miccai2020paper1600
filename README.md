@@ -87,8 +87,8 @@ configs in `config/exp_holdout`. To successfully process data and build-run
 experiments one need to change core paths `iw/path.py`.
 
 Validation experiments could be built via configs in `config/exp_val`. It
-includes hyperparameters search for the Focal Loss. ([TODO] Vis. notebook &
-froc data for val exp)
+includes hyperparameters search for the Focal Loss. Results are presented in
+`notebook/results/val_exps_visualization.ipynb`.
 
 ## Experiment Reproduction
 To run a single experiment please follow the steps below:
