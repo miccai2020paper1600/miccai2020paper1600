@@ -13,9 +13,9 @@ def fill3d(img3d, nodule, z_origin, z_spacing):
         pts = np.int32([roi[1]])
         img = np.zeros_like(img3d[..., z], dtype='float32').T
 
-        img3d[::, ::, z] = cv2.fillPoly(img.copy(), pts, 1).T
+        img3d[::, ::, z] += cv2.fillPoly(img.copy(), pts, 1).T
 
-    return img3d
+    return np.clip(img3d, 0, 1)
 
 
 def get_connected_components(y):
