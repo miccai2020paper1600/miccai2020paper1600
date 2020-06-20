@@ -1,6 +1,15 @@
 # Universal Loss Reweighting to Balance Lesion Size Inequality in 3D Medical Image Segmentation
 Anonymous code release for paper id 1600
 
+
+
+! ! !
+
+**Repository has been moved to** 
+[https://github.com/neuro-ml/inverse_weighting](https://github.com/neuro-ml/inverse_weighting)
+
+! ! !
+
 ## Table of Contents
 * [Typos](#typos)
 * [Requirements](#requirements)
